@@ -1,0 +1,9 @@
+# Allow all search and AI search crawlers
+User-agent: *
+Allow: /
+
+# ChatGPT search (explicitly allowed)
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://alymcdermott.com/sitemap.xml
