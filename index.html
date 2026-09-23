@@ -308,10 +308,48 @@
       <a href="mailto:alyssawmcdermott@gmail.com">alyssawmcdermott@gmail.com</a>
     </div>
   </div>
-  <div class="form-embed">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJ6YXuPD1JajGa0_yhIuH5IAPKNDeE0qu-3dPMggK5F0n1Mg/viewform?embedded=true" title="Start the hunt — contact form" loading="lazy">Loading…</iframe>
-    <p class="form-alt">Form not loading? <a href="https://forms.gle/Bgg7M9TRL5yWENec7" target="_blank" rel="noopener">Open it in a new tab</a>.</p>
+  <div class="lead-card">
+    <span class="eyebrow">Start the hunt</span>
+    <h3>Tell me what you're looking for.</h3>
+    <form id="lead-form" class="lead-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfJ6YXuPD1JajGa0_yhIuH5IAPKNDeE0qu-3dPMggK5F0n1Mg/formResponse" method="POST" target="gform-sink">
+      <div class="pair">
+        <label>Name<input type="text" name="entry.973063894" autocomplete="name"></label>
+        <label>Phone<input type="tel" name="entry.492380192" autocomplete="tel"></label>
+      </div>
+      <label><span>Email <span class="req">*</span></span><input type="email" name="emailAddress" autocomplete="email" required></label>
+      <fieldset>
+        <legend>What are you hunting for? <span class="req">*</span></legend>
+        <div class="chips">
+        <label class="chip"><input type="radio" name="entry.1569657093" value="A home I can buy below value" required><span>A home I can buy below value</span></label>
+        <label class="chip"><input type="radio" name="entry.1569657093" value="Foreclosure or bank-owned"><span>Foreclosure or bank-owned</span></label>
+        <label class="chip"><input type="radio" name="entry.1569657093" value="Fixer-upper"><span>Fixer-upper</span></label>
+        <label class="chip"><input type="radio" name="entry.1569657093" value="Investment property"><span>Investment property</span></label>
+        <label class="chip"><input type="radio" name="entry.1569657093" value="Manufactured home or land"><span>Manufactured home or land</span></label>
+        <label class="chip"><input type="radio" name="entry.1569657093" value="Still figuring it out! / Open to ideas"><span>Still figuring it out! / Open to ideas</span></label>
+        </div>
+      </fieldset>
+      <button class="btn btn-accent lead-main" type="submit">Start the hunt</button>
+    </form>
+    <div id="lead-thanks" class="lead-thanks" hidden>
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#1D4F52" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-7"/></svg>
+      <h3>Got it, thank you.</h3>
+      <p>I'll reply to you personally. If it's time-sensitive, call or text me at <a href="tel:+17755304178">775.530.4178</a>.</p>
+    </div>
+    <iframe name="gform-sink" id="gform-sink" title="Form submission" hidden></iframe>
+    <div class="lead-or"><span>or reach me directly</span></div>
+    <div class="lead-alt">
+      <a class="btn btn-outline" href="tel:+17755304178">Call</a>
+      <a class="btn btn-outline" href="sms:+17755304178">Text</a>
+      <a class="btn btn-outline" href="mailto:alyssawmcdermott@gmail.com">Email</a>
+    </div>
   </div>
+  <script>
+  (function(){
+    var f=document.getElementById('lead-form'),t=document.getElementById('lead-thanks'),k=document.getElementById('gform-sink'),sent=false;
+    f.addEventListener('submit',function(){sent=true;f.querySelector('button').textContent='Sending…';});
+    k.addEventListener('load',function(){if(!sent)return;f.hidden=true;t.hidden=false;t.scrollIntoView({block:'center',behavior:'smooth'});});
+  })();
+  </script>
 </section>
 
 </main>
