@@ -295,3 +295,89 @@ form.lead{background:var(--white);border:1px solid var(--line);border-radius:20p
 @media (max-width:1100px){.field-head{grid-template-columns:1fr;gap:28px}}
 @media (max-width:720px){.field{padding-top:64px;padding-bottom:64px}.carousel .slide{flex-basis:70%}.car-nav{display:none}}
 .carousel .slide img{height:auto}
+
+/* about: speaking photo with overlay caption */
+.speak-figure{position:relative;margin:0;border-radius:16px;overflow:hidden}
+.speak-figure img{width:100%;height:720px;object-fit:cover;object-position:center 18%;border-radius:0!important}
+.speak-figure figcaption{position:absolute;left:0;right:0;bottom:0;padding:90px 28px 26px;display:flex;flex-direction:column;gap:6px;color:#fff;background:linear-gradient(to top,rgba(10,22,24,.88) 0%,rgba(10,22,24,.55) 55%,rgba(10,22,24,0) 100%)}
+.speak-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-soft)}
+.speak-title{font-family:var(--serif);font-size:34px;line-height:1.05}
+.speak-meta{font-size:14.5px;color:#DCE6E4}
+
+/* contact photo */
+.contact-photo{width:100%;max-width:420px;aspect-ratio:4/5;height:auto;object-fit:cover;object-position:center 20%;border-radius:16px}
+.lead-intro{font-size:16.5px;line-height:1.6;color:var(--body)}
+
+/* floating Start the hunt panel */
+.hunt-panel{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;flex-direction:column-reverse;align-items:flex-end;gap:12px;font-family:var(--sans)}
+.hunt-toggle{display:inline-flex;align-items:center;gap:10px;min-height:54px;padding:0 20px 0 18px;border:0;border-radius:999px;background:var(--accent);color:#fff;font:500 16px var(--sans);cursor:pointer;box-shadow:0 12px 30px rgba(20,40,42,.28)}
+.hunt-toggle:hover{background:#A93822}
+.hunt-dot{width:9px;height:9px;border-radius:999px;background:#fff;box-shadow:0 0 0 0 rgba(255,255,255,.7);animation:huntPulse 2.2s infinite}
+@keyframes huntPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}70%{box-shadow:0 0 0 9px rgba(255,255,255,0)}100%{box-shadow:0 0 0 0 rgba(255,255,255,0)}}
+.hunt-chev{transition:transform .2s}
+.hunt-panel.open .hunt-chev{transform:rotate(180deg)}
+.hunt-body{width:390px;max-height:calc(100vh - 140px);overflow:auto;background:var(--white);border:1px solid var(--line);border-radius:20px;padding:24px;box-shadow:0 24px 60px rgba(20,40,42,.25);display:flex;flex-direction:column;gap:16px}
+.hunt-body[hidden]{display:none}
+.hunt-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.hunt-head .eyebrow{font-size:11.5px}
+.hunt-title{font-family:var(--serif);font-size:28px;line-height:1.05;margin-top:6px}
+.hunt-close{width:36px;height:36px;flex:none;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer}
+.hunt-body .lead-form{gap:14px}
+.hunt-body .lead-form input[type=text],.hunt-body .lead-form input[type=tel],.hunt-body .lead-form input[type=email]{min-height:44px}
+.hunt-body .chips{gap:8px}
+.hunt-body .chip span{min-height:36px;padding:0 13px;font-size:13.5px}
+.hunt-body .lead-main{min-height:52px}
+.hunt-alt{font-size:14px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.hunt-dot{animation:none}}
+@media (max-width:720px){
+  .hunt-panel{left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom,0px));align-items:stretch}
+  .hunt-toggle{justify-content:center}
+  .hunt-body{width:auto;max-height:78vh;padding:20px}
+  .speak-figure img{height:520px}
+  .speak-title{font-size:28px}
+  .site-footer{padding-bottom:110px}
+}
+.pair{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+.lead-form input{min-width:0;width:100%;box-sizing:border-box}
+@media (max-width:720px){.pair{grid-template-columns:minmax(0,1fr)}}
+
+/* contact: full photo background with overlaid text */
+.contact-hero{position:relative;overflow:hidden;background:#14161A;color:#F3EFE8;min-height:780px;display:flex;align-items:center}
+.contact-bg{position:absolute;top:0;right:0;height:100%;width:62%;object-fit:cover;object-position:center 22%}
+.contact-shade{position:absolute;inset:0;background:linear-gradient(90deg,#14161A 0%,#14161A 36%,rgba(20,22,26,.82) 48%,rgba(20,22,26,.25) 70%,rgba(20,22,26,0) 100%)}
+.contact-inner{position:relative;width:100%;padding-top:110px;padding-bottom:110px}
+.contact-copy{max-width:560px;display:flex;flex-direction:column;gap:24px}
+.contact-copy .eyebrow{color:var(--accent-soft)}
+.contact-copy h2.display{color:#FBF9F5;font-size:clamp(44px,5vw,72px)}
+.contact-copy p{font-size:18.5px;line-height:1.6;color:#D9DEDD}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn-ghost{border-color:rgba(251,249,245,.7);color:#FBF9F5}
+.btn-ghost:hover{background:#FBF9F5;color:var(--ink)}
+.contact-hero .contact-lines{font-size:15.5px;color:#D9DEDD}
+.contact-hero .contact-lines a{color:#FBF9F5}
+@media (max-width:1100px){
+  .contact-bg{width:100%}
+  .contact-shade{background:linear-gradient(0deg,#14161A 0%,rgba(20,22,26,.9) 40%,rgba(20,22,26,.35) 70%,rgba(20,22,26,.1) 100%)}
+  .contact-hero{min-height:900px;align-items:flex-end}
+  .contact-inner{padding-top:360px;padding-bottom:64px}
+}
+@media (max-width:720px){
+  .contact-hero{min-height:760px}
+  .contact-bg{object-position:center 12%}
+  .contact-inner{padding-top:300px;padding-bottom:48px}
+  .contact-actions .btn{flex:1 1 auto}
+  .contact-actions .btn-accent{flex-basis:100%}
+}
+/* v2: show the full photo, no seam */
+.contact-hero{background:#1F2429;min-height:900px}
+.contact-bg{top:0;right:6%;left:auto;height:100%;width:auto;max-width:none;aspect-ratio:1024/1536;object-fit:cover;object-position:center;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 82%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%,#000 82%,transparent 100%)}
+.contact-shade{background:linear-gradient(90deg,#1F2429 0%,#1F2429 30%,rgba(31,36,41,.55) 50%,rgba(31,36,41,0) 64%)}
+@media (max-width:1100px){
+  .contact-hero{min-height:0;display:block}
+  .contact-bg{position:relative;right:auto;display:block;width:100%;height:auto;-webkit-mask-image:linear-gradient(180deg,#000 70%,transparent 100%);mask-image:linear-gradient(180deg,#000 70%,transparent 100%)}
+  .contact-shade{display:none}
+  .contact-inner{margin-top:-160px;padding-top:0;padding-bottom:64px}
+}
+@media (max-width:720px){.contact-inner{margin-top:-120px;padding-top:0;padding-bottom:48px}.contact-bg{object-position:center}}
+@media (max-width:1100px){.contact-bg{-webkit-mask-image:linear-gradient(180deg,#000 55%,transparent 92%);mask-image:linear-gradient(180deg,#000 55%,transparent 92%)}}
